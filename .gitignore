@@ -1,14 +1,27 @@
-# Secrets & Configs
+# Environment / secrets
 .env
-*.env
+*.env.local
 
-# Python & Virtual Environments
-venv/
-.venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
 
-# OS & Editor Files
+# Evaluation outputs (regenerated, don't need in git)
+evaluation/results/*.csv
+evaluation/results/*.png
+
+# IDE
+.vscode/
+.idea/
+.antigravity/
+
+# OS
 .DS_Store
 Thumbs.db
-.vscode/
