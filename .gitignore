@@ -1,0 +1,14 @@
+# Secrets & Configs
+.env
+*.env
+
+# Python & Virtual Environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
