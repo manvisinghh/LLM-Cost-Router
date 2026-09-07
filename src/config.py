@@ -3,20 +3,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# API keys
+# API key — single provider for now (Groq)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Model names
-CHEAP_MODEL_NAME = os.getenv("CHEAP_MODEL_NAME", "llama-3.2-3b-preview")
-EXPENSIVE_MODEL_NAME = os.getenv("EXPENSIVE_MODEL_NAME", "gpt-4o")
+CHEAP_MODEL_NAME = os.getenv("CHEAP_MODEL_NAME", "openai/gpt-oss-20b")
+EXPENSIVE_MODEL_NAME = os.getenv("EXPENSIVE_MODEL_NAME", "openai/gpt-oss-120b")
 
 # Routing thresholds
 DIFFICULTY_THRESHOLD = float(os.getenv("DIFFICULTY_THRESHOLD", 3))
 CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", 0.6))
 
-# Rough per-1K-token pricing for cost tracking (update with real numbers later)
+# Per-1K-token pricing (verify at console.groq.com/docs/pricing before final report)
 PRICING = {
-    CHEAP_MODEL_NAME: {"input": 0.00005, "output": 0.00008},
-    EXPENSIVE_MODEL_NAME: {"input": 0.0025, "output": 0.01},
+    CHEAP_MODEL_NAME: {"input": 0.0001, "output": 0.0001},      # gpt-oss-20b
+    EXPENSIVE_MODEL_NAME: {"input": 0.00015, "output": 0.0006},  # gpt-oss-120b
 }
